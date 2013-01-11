@@ -1,0 +1,34 @@
+[user]
+	email = lilia.markham@causes.com
+	name = Lilia Markham
+
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+	pager = true
+	ui = auto
+
+[apply]
+	whitespace = fix
+
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%C(yellow)%d%Creset' --abbrev-commit --date=relative
+	st = status
+	di = diff
+	co = checkout
+	ci = checkin
+	sh = show
+	su = submodule update
+	f  = fetch
+	up = pull
+	rb = rebase
+	br = branch
+	db = branch -D
+	rom = rebase origin/master
+	staged = diff --cached
+[solo]
+	name = Lilia Markham
+	email = lilia.markham@causes.com
+[core]
+	editor = vim
