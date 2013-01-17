@@ -1,6 +1,12 @@
 call pathogen#runtime_append_all_bundles()  " add .vim/bundle subdirs to runtime path
 call pathogen#helptags()                    " wasteful, but no shortage of grunt available
 
+" use my aliases
+set shell=/bin/bash\ --rcfile\ ~/.bash_profile\ -i
+set ruler
+
+set tags=.git/tags;
+
 set nocompatible                      " just in case system-wide vimrc has set this otherwise
 set backupdir=~/.vim/tmp/backup,.     " keep backup files out of the way
 set directory=~/.vim/tmp/swap,.       " keep swap files out of the way
@@ -48,7 +54,7 @@ set tabstop=2                     " spaces per tab
 set expandtab                     " always use spaces instead of tabs
 set smarttab                      " <tab>
 set list                          " show whitespace
-set listchars=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
+set listchars=nbsp:¬,tab:>-,extends:»,precedes:«,trail:•
 set autoindent
 
 " Quickfix listing
@@ -81,12 +87,15 @@ let g:CommandTMaxHeight            = 10
 let g:CommandTMaxFiles             = 30000
 let g:CommandTMaxCachedDirectories = 10
 let g:CommandTScanDotDirectories   = 1
-map <leader>f :CommandTFlush<CR>
+map <leader>r :CommandTFlush<CR>
+map <leader>f :CommandTBuffer<CR>
 if &term =~ "screen" || &term =~ "xterm"
   let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
   let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
   let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
 endif
+let g:CommandTAcceptSelectionMap = '<C-t>'
+let g:CommandTAcceptSelectionTabMap = '<CR>'
 
 " set up :Ack command as replacement for :grep
 function! AckGrep(command)
@@ -95,6 +104,7 @@ function! AckGrep(command)
 endfunction
 command! -nargs=+ -complete=file Ack call AckGrep(<q-args>)
 map <leader>a :Ack<space>
+map <leader>g :Ack<space><C-r><C-w>
 
 function! s:ToggleVisibility()
   if g:solarized_visibility != 'high'
@@ -116,10 +126,39 @@ nnoremap <C-kMinus> <C-w>-
 nnoremap <silent> <leader>j :call SwapWithNext()<CR>
 nnoremap <silent> <leader>k :call SwapWithPrevious()<CR>
 
+" Tab for tabs
+map <Tab> :tabn<CR>
+map <S-Tab> :tabp<CR>
+
+" move increment/decrement so we can rebind them below
+nnoremap <C-j> <C-a>
+nnoremap <C-k> <C-x>
+
+map <C-x> :bd<CR>
+nmap <C-a> ^i
+nmap <C-e> $i
 imap <C-a> <C-o>^
 imap <C-e> <C-o>$
+map <C-c> :tabclose<CR>
+map <C-s> :w<CR>
+
+" Convert ruby hash rockets to 1.9 syntax
+nmap <leader>rh :%s/\v(:)@<!:([a-zA-Z_][a-zA-Z_0-9]*)(\s*)\=\>\s?/\2:\3/gc<cr>
+
+nmap <leader>c vi{:Align
+map <leader>m vi{:Align
 
 set backspace=2
 
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
+
+" disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
