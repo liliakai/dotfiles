@@ -84,7 +84,7 @@ match OverLength /\%81v.*/
 " Command-T
 let g:CommandTMatchWindowReverse   = 1
 let g:CommandTMaxHeight            = 10
-let g:CommandTMaxFiles             = 30000
+let g:CommandTMaxFiles             = 50000
 let g:CommandTMaxCachedDirectories = 10
 let g:CommandTScanDotDirectories   = 1
 map <leader>r :CommandTFlush<CR>
