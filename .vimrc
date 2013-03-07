@@ -4,6 +4,7 @@ call pathogen#helptags()                    " wasteful, but no shortage of grunt
 " use my aliases
 set shell=/bin/bash\ --rcfile\ ~/.bash_profile\ -i
 set ruler
+set rnu " relative line numbers
 
 set tags=.git/tags;
 
@@ -28,6 +29,7 @@ set showcmd                           " extra info in command line
 set nojoinspaces                      " don't autoinsert two spaces after '.', '?', '!' for join command
 set wildignore+=*.o,.git              " patterns to ignore during file-navigation
 
+command Trim %s/\s\+$//
 " statusline
 " cf the default statusline: %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " format markers:
@@ -96,7 +98,7 @@ if &term =~ "screen" || &term =~ "xterm"
 endif
 let g:CommandTAcceptSelectionMap = '<C-t>'
 let g:CommandTAcceptSelectionTabMap = '<CR>'
-set wildignore+=,vendor/rails/**
+set wildignore+=,vendor/rails/**,vendor/gems/**
 
 " set up :Ack command as replacement for :grep
 function! AckGrep(command)
