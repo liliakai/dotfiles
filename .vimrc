@@ -9,7 +9,6 @@ call pathogen#helptags()                    " wasteful, but no shortage of grunt
 " use my aliases
 set shell=/bin/bash\ --rcfile\ ~/.bash_profile\ -i
 set ruler
-set rnu " relative line numbers
 
 set tags=.git/tags;
 
