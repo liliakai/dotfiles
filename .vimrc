@@ -3,7 +3,7 @@
 " mkdir ~/.vim/tmp/backup
 " mkdir ~/.vim/tmp/swap
 
-call pathogen#runtime_append_all_bundles()  " add .vim/bundle subdirs to runtime path
+call pathogen#incubate()  " add .vim/bundle subdirs to runtime path
 call pathogen#helptags()                    " wasteful, but no shortage of grunt available
 
 " use my aliases
