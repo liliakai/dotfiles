@@ -83,7 +83,7 @@ if [ -f "${SSH_ENV}" ]; then
 else
      start_agent;
 fi
-PATH=$PATH:/usr/local/bin
+PATH=/usr/local/git/bin:$PATH:/usr/local/bin
 source /usr/local/git/contrib/completion/git-completion.bash
 source /usr/local/git/contrib/completion/git-prompt.sh
 Color_Off="\[\033[0m\]"       # Text Reset
