@@ -1,7 +1,7 @@
 # many settings taken from
 # http://stevelosh.com/blog/2012/10/the-homely-mutt/#configuring
 #
-source "~/.credentials.muttrc"
+source "gpg -d ~/.mutt/.credentials.muttrc.gpg |"
 macro index <esc>s "s+missedspam<enter><enter>" "move message to spam folder"
 
 set header_cache=~/.mutt/cache/headers
