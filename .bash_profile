@@ -12,6 +12,7 @@ source ~/.bashrc
 alias ebp="em ~/.bash_profile && sbp"
 alias sbp="source ~/.bash_profile"
 alias e="vim"
+alias ack=ack-grep
 
 alias flog="git log --full-diff --decorate -p ."
 alias flp="git log --full-diff --decorate -p"
