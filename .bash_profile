@@ -6,6 +6,7 @@ if [ -f ~/.bashrc ]; then
 fi
 
 source ~/.bashrc
+export TERM=xterm-256color
 
 # User specific environment and startup programs
 
