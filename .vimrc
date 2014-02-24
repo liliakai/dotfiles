@@ -4,8 +4,11 @@
 " mkdir ~/.vim/tmp/swap
 
 
+call pathogen#infect()
+call pathogen#helptags()
+
 " use my aliases
-set shell=/bin/bash\ --rcfile\ ~/.bash_profile\ -i
+" set shell=/bin/bash\ --rcfile\ ~/.bash_profile\ -i
 set ruler
 set rnu " relative line numbers
 
@@ -30,9 +33,10 @@ set cursorline                        " highlight current line
 set showmatch                         " show matching brackets
 set showcmd                           " extra info in command line
 set nojoinspaces                      " don't autoinsert two spaces after '.', '?', '!' for join command
-set wildignore+=*.o,.git              " patterns to ignore during file-navigation
+set wildignore+=*.o                   " patterns to ignore during file-navigation
 
 command Trim %s/\s\+$//
+
 " statusline
 " cf the default statusline: %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " format markers:
@@ -101,7 +105,7 @@ if &term =~ "screen" || &term =~ "xterm"
 endif
 let g:CommandTAcceptSelectionMap = '<C-t>'
 let g:CommandTAcceptSelectionTabMap = '<CR>'
-set wildignore+=,vendor/rails/**,vendor/gems/**
+set wildignore+=vendor/rails/**,vendor/gems/**
 
 " set up :Ack command as replacement for :grep
 function! AckGrep(command)
