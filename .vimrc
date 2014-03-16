@@ -78,6 +78,7 @@ autocmd BufReadPost quickfix setlocal so=0 | setlocal nolist
 " functionality
 filetype indent plugin on
 syntax on
+au BufReadPost *.ino set syntax=cpp " arduino
 
 " colorscheme
 set background=light
