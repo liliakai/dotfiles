@@ -81,7 +81,7 @@ macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 #macro pager \Cb '<enter-command>toggle sidebar_visible<enter>'
 #
 # Mario Holbe suggests:
-macro index \Cb '<enter-command>toggle sidebar_visible<enter><refresh>'
-macro pager \Cb '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+#macro index \Cb '<enter-command>toggle sidebar_visible<enter><refresh>'
+#macro pager \Cb '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 #
 source ~/.mutt/gpg.rc
