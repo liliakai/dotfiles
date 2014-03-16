@@ -115,7 +115,7 @@ set wildignore+=vendor/rails/**,vendor/gems/**
 
 " set up :Ack command as replacement for :grep
 function! AckGrep(command)
-  cexpr system("ack " . a:command)
+  cexpr system("ack-grep " . a:command)
   cw " show quickfix window already
 endfunction
 command! -nargs=+ -complete=file Ack call AckGrep(<q-args>)
