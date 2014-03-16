@@ -161,8 +161,8 @@ map <C-s> :w<CR>
 " Convert ruby hash rockets to 1.9 syntax
 nmap <leader>rh :%s/\v(:)@<!:([a-zA-Z_][a-zA-Z_0-9]*)(\s*)\=\>\s?/\2:\3/gc<cr>
 
-nmap <leader>c vi{:Align
-map <leader>m vi{:Align
+nmap <leader>c :'<,'>Align
+map <leader>m :'<,'>Align
 
 set backspace=2
 
