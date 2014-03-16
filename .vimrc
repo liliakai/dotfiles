@@ -54,7 +54,12 @@ command Trim %s/\s\+$//
 "   %V current virtual column number (-n), if different from %c
 "   %P percentage through buffer
 "   %) end of width specification
-set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+" set statusline=%<\ %n:\ %1*\ %{fugitive#head(6)}\ %0*\ %f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+
+" vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
 
 " all languages
 set shiftwidth=2                  " spaces per tab (when shifting)
