@@ -4,9 +4,11 @@ if [ -f ~/.profile ]; then
 	. ~/.profile
 fi
 
+export PATH="$HOME/.rbenv/shims:$PATH"
+
 export EDITOR="vim"
 export TERM=xterm-256color
-
+[ -n "$TMUX" ] && export TERM=screen-256color
 alias gopath=". gopath.sh"
 alias ebp="em ~/.bash_profile && sbp"
 alias sbp="source ~/.bash_profile"
