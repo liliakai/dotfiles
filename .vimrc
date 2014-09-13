@@ -82,7 +82,7 @@ au BufReadPost *.ino set syntax=cpp " arduino
 
 " colorscheme
 set background=light
-color slate
+color lucy
 highlight MatchParen   cterm=bold      ctermfg=226
 highlight Pmenu                                      ctermbg=8
 highlight PmenuSel     cterm=bold      ctermfg=10    ctermbg=4
