@@ -32,5 +32,9 @@
 	email = liliakai@gmail.com
 [core]
 	editor = vim
+	pager = less -x1,5
 [push]
 	default = simple
+[rerere]
+	enabled = true
+	autoupdate = true
