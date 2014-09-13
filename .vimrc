@@ -151,8 +151,8 @@ nnoremap <C-j> <C-a>
 nnoremap <C-k> <C-x>
 
 map <C-x> :bd<CR>
-nmap <C-a> ^i
-nmap <C-e> $i
+nmap <C-a> ^
+nmap <C-e> $
 imap <C-a> <C-o>^
 imap <C-e> <C-o>$
 map <C-c> :tabclose<CR>
