@@ -35,6 +35,8 @@
 	pager = less -x1,5
 [push]
 	default = simple
+[merge]
+	ff = only
 [rerere]
 	enabled = true
 	autoupdate = true
