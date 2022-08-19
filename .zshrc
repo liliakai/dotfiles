@@ -7,11 +7,11 @@ fpath=(~/.zsh $fpath)
 
 source ~/.git-prompt.sh
 
-Color_Off="$reset_color%}"
-PathShort="%~"
-bmo_start="%{$fg[cyan]%}╭|❲$reset_color%}"
-bmo_end="%{$fg[cyan]%}❳|╯$reset_color%} "
-precmd () { __git_ps1 "$PathShort $bmo_start$(git branch &>/dev/null;\
+Color_Off="%{$reset_color%}"
+PathShort="%~ "
+bmo_start="%{$fg[cyan]%}╭|❲$Color_Off"
+bmo_end="%{$fg[cyan]%}❳|╯$Color_Off"
+precmd () { __git_ps1 "$PathShort$bmo_start$(git branch &>/dev/null;\
 if [ $? -eq 0 ]; then \
   echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
   if [ $? -eq 0 ]; then \
