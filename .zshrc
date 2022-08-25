@@ -1,10 +1,14 @@
-source ~/.bashrc
+source ~/.bashrc # load aliases and other things inherited from bash
 autoload -U colors && colors
-setopt interactivecomments
+setopt interactivecomments # enable comments like this one
 
+# locate the git bash completion script
 zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
+
+# add .zsh to fpath, to load git zsh completion
 fpath=(~/.zsh $fpath)
 
+# enable display of the current git branch in the command prompt
 source ~/.git-prompt.sh
 
 Color_Off="%{$reset_color%}"
